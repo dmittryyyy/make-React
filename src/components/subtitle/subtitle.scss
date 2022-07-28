@@ -1,0 +1,17 @@
+.subtitle {
+    max-width: 592px;
+    color: #1B1B1B;
+    // .subtitle__title
+
+    &__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    // .subtitle__text
+
+    &__text {
+        line-height: 24px;
+        padding-top: 24px;
+    }
+}

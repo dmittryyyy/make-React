@@ -1,0 +1,80 @@
+.selects {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        margin-right: 32px;
+        width: 100%;
+        max-width: 280px;
+        user-select: none;
+        margin-bottom: 168px;
+    }
+}
+
+.dropDown {
+    position: relative;
+    // .dropDown__btn
+
+    &__btn {
+        padding-bottom: 6px;
+        background: #F2F2F2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 2px solid #AEADAE;
+        cursor: pointer;
+
+        &:hover {
+            border-bottom: 2px solid #3E29E3;
+        }
+
+        &::after {
+            content: '';
+            width: 9px;
+            height: 6px;
+            background: url("../../../../images/ui/arrowDown.svg") no-repeat center/cover;
+        }
+    }
+
+    // .dropDown__content
+
+    &__content {
+        position: absolute;
+        width: 100%;
+        top: 100%;
+        background: white;
+        box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.08);
+        transition: all .2s;
+    }
+
+    // .dropDown__item
+
+    &__item {
+        padding: 16px 24px;
+        cursor: pointer;
+
+        &:hover {
+            background: #3E29E3;
+            color: #FFFFFF;
+            transition: .2s all ease;
+        }
+    }
+
+    &__item.activeElem {
+        color: #3D28E1;
+    }
+}
+
+.showDropDown.dropDown {
+    &__btn {
+        border-bottom: 2px solid #3E29E3;
+
+        &::after {
+            content: '';
+            width: 9px;
+            height: 6px;
+            background: url("../../../../images/ui/arrowUp.svg") no-repeat center/cover;
+            transition: .2s all ease;
+        }
+    }
+}

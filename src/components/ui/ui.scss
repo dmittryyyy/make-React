@@ -1,0 +1,40 @@
+.ui {
+
+    // .ui__title
+
+    &__title {
+        margin-bottom: 48px;
+    }
+
+    // .ui__content
+
+    &__content {
+        position: relative;
+    }
+}
+
+.content {
+
+    // .content__block
+
+    &__block {
+        margin-bottom: 64px;
+    }
+
+    // .content__block-title
+
+    &__block-title {
+        margin-bottom: 32px;
+    }
+
+    // .content__block-titleText
+
+    &__block-titleText {
+        margin-bottom: 48px;
+
+        h2 {
+            font-size: 24px;
+            line-height: 32px;
+        }
+    }
+}

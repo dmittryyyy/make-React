@@ -1,0 +1,62 @@
+.textField {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    // .textField__item
+
+    &__item {
+        width: 100%;
+        max-width: 280px;
+        display: flex;
+        flex-direction: column;
+        margin-right: 32px;
+        position: relative;
+    }
+
+    // .textField__item-input
+
+    &__item-input {
+        outline: none;
+        border: none;
+        background: #F2F2F2;
+        border-bottom: 2px solid #AEADAE;
+        padding-bottom: 6px;
+        margin-top: 4px;
+
+        &:hover {
+            border-bottom: 2px solid #3E29E3;
+        }
+
+        &:focus {
+            border-bottom: 4px solid #3E29E3;
+        }
+
+        &:focus~.textField__item-prompt {
+            opacity: 1;
+            bottom: 32px;
+            transition: .3s all ease;
+        }
+    }
+
+    // .textField__item-prompt
+
+    &__item-prompt {
+        position: absolute;
+        font-size: 12px;
+        line-height: 20px;
+        color: #7D7D7D;
+        opacity: 0;
+        bottom: 0;
+        left: 3px;
+        transition: .3s all ease;
+    }
+
+    // .textField__item-title
+
+    &__item-title {
+        font-size: 14px;
+        line-height: 20px;
+        color: #7D7D7D;
+        margin-bottom: 16px;
+    }
+}

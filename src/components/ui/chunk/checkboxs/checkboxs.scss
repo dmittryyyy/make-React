@@ -1,0 +1,134 @@
+.checkboxs {
+    display: flex;
+    // .checkboxs__item
+
+    &__item {
+        width: 100%;
+        max-width: 344px;
+    }
+
+    &__item:not(:last-child) {
+        margin-right: 32px;
+    }
+}
+
+.checks {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 24px;
+
+    &:hover {
+        .checks__fake {
+            border: 2px solid #3E29E3;
+            transition: .3s ease all;
+        }
+    }
+    // .checks__input
+
+    &__input {
+        display: none;
+
+        &:checked+.checks__fake {
+            background-color: #3E29E3;
+            border: 2px solid #3E29E3;
+        }
+
+        &:checked+.checks__fake::after {
+            opacity: 1;
+        }
+    }
+
+    // .checks__fake
+
+    &__fake {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        border: 2px solid #AEADAE;
+        cursor: pointer;
+
+        &:hover {
+            border: 2px solid #3E29E3;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 14px;
+            height: 10px;
+            background: url('../../../../images/ui/checkbox/check.svg') no-repeat center/cover;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: .3s ease all;
+        }
+    }
+
+    // .checks__name
+
+    &__name {
+        margin-left: 16px;
+    }
+}
+
+.circles {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 24px;
+
+
+    &:hover {
+        .circles__fake {
+            border: 2px solid #3E29E3;
+            transition: .3s ease all;
+        }
+    }
+
+    // .circles__input
+
+    &__input {
+        display: none;
+
+        &:checked+.circles__fake {
+            border: 2px solid #3E29E3;
+        }
+
+        &:checked+.circles__fake::after {
+            opacity: 1;
+        }
+    }
+
+    // .circles__fake
+
+    &__fake {
+        position: relative;
+        width: 24px;
+        height: 24px;
+        border-radius: 100%;
+        border: 2px solid #AEADAE;
+        cursor: pointer;
+
+        &::after {
+            position: absolute;
+            content: '';
+            width: 12px;
+            height: 12px;
+            background: #3E29E3;
+            border-radius: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            opacity: 0;
+            transition: .3s ease all;
+        }
+    }
+
+    // .circles__name
+
+    &__name {
+        margin-left: 16px;
+    }
+}

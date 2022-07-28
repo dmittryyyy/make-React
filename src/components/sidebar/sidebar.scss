@@ -1,0 +1,27 @@
+.sidebar {
+    position: sticky;
+    top: 310px;
+    // .sidebar__list
+
+    &__list {
+        max-height: 500px;
+        overflow-y: auto;
+    }
+
+    // .sidebar__list-item
+
+    &__list-item {
+        font-size: 14px;
+        margin-bottom: 16px;
+    }
+
+    // .sidebar__list-link
+
+    &__list-link {
+        color: #7D7D7D;
+
+        &:hover {
+            color: #1B1B1B;
+        }
+    }
+}

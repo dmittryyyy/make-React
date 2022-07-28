@@ -1,0 +1,134 @@
+.App {
+  padding: 32px 48px 64px 64px;
+  max-width: 1312px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+  grid-auto-flow: dense;
+  grid-template-areas:
+    "hd hd hd hd hd hd hd hd hd hd hd hd"
+    "sd sd sd mt mt mt mt mt mt mt mt mt"
+    ". . . main main main main main main main main main"
+    "ft ft ft ft ft ft ft ft ft ft ft ft";
+}
+
+.header {
+  grid-area: hd;
+}
+
+.mainTop {
+  grid-area: mt;
+}
+
+.sidebar {
+  grid-area: sd;
+}
+
+main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: ft;
+}
+
+//mobile
+h1 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h2 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+h3 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.lead {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.big {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.lead {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+//desktop
+h1 {
+  font-size: 48px;
+  line-height: 56px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 40px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.lead {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.big {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+.lead {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+
+@media(max-width: 928.98px) {
+  .App {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-areas:
+      "hd hd hd hd hd hd hd hd"
+      "sd sd sd main main main main"
+      "ft ft ft ft ft ft ft ft";
+  }
+}
+
+@media(max-width: 424.98px) {
+  .App {
+    grid-template-columns: repeat(4, 1fr);
+    grid-column-gap: 24px;
+    grid-template-areas:
+      "hd hd hd hd"
+      "sd main main main"
+      "ft ft ft ft";
+  }
+}
+
+@media(max-width: 320px) {
+  .App {
+    display: flex;
+    flex-direction: column;
+  }
+}

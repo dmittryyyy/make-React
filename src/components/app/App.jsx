@@ -1,3 +1,6 @@
+import { React, useState } from 'react';
+
+import { Menu } from '../menu/Menu';
 import { Header } from '../header/Header';
 import { Sidebar } from '../sidebar/Sidebar';
 import { MainTop } from '../mainTop/MainTop';
@@ -9,21 +12,41 @@ import { Footer } from '../footer/Footer';
 import './app.scss';
 
 function App() {
+
+  const [isMenu, isSetMenu] = useState(false);
+
+  const showHideMenu = () => {
+    if (isMenu) {
+      isSetMenu(false);
+      document.body.style.overflow = "scroll"
+    } else {
+      isSetMenu(true);
+      document.body.style.overflow = "hidden"
+    }
+  }
+
   return (
     <div className="App">
-      <Header />
 
-      <Sidebar />
+      <div className={`App__menu ${isMenu ? 'show' : ''}`}>
+        <Menu hideMenu={showHideMenu}/>
+      </div>
 
-      <MainTop />
+      <div className="App__container">
+        <Header showMenu={showHideMenu}/>
 
-      <main>
-        <Grid />
-        <Typography />
-        <UI />
-      </main>
+        <Sidebar />
 
-      <Footer />
+        <MainTop />
+
+        <main>
+          <Grid />
+          <Typography />
+          <UI />
+        </main>
+
+        <Footer />
+      </div>
     </div>
   );
 }

@@ -4,7 +4,8 @@ import logo from "../../images/header/logo.svg"
 
 import './header.scss';
 
-export const Header = () => {
+export const Header = ({ showMenu }) => {
+
     return (
         <>
             <header className='header'>
@@ -16,7 +17,7 @@ export const Header = () => {
                     </div>
                 </div>
 
-                <div className="header__menu">
+                <div className="header__menu" onClick={(e) => showMenu()}>
                     <div className="header__menu-top"></div>
                     <div className="header__menu-bottom"></div>
                 </div>

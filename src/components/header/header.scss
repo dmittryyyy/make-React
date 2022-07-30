@@ -44,6 +44,13 @@
         flex-direction: column;
         align-items: flex-end;
         cursor: pointer;
+
+        &:hover {
+            .header__menu-bottom {
+                width: 32px;
+                transition: .4s ease;
+            }
+        }
     }
 
     // .header__menu-top
@@ -61,6 +68,7 @@
         background-color: black;
         width: 24px;
         height: 2px;
+        transition: .4s ease;
     }
 
     // .header__title

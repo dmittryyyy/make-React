@@ -7,7 +7,7 @@
         width: 100%;
         max-width: 280px;
         user-select: none;
-        margin-bottom: 168px;
+        margin-bottom: 232px;
     }
 }
 
@@ -32,8 +32,20 @@
             content: '';
             width: 9px;
             height: 6px;
-            background: url("../../../../images/ui/arrowDown.svg") no-repeat center/cover;
+            background: url("../../../../images/ui/arrow-down.svg") no-repeat center/cover;
         }
+    }
+
+    //.dropDown__btn-promt
+    &__btn-promt {
+        position: absolute;
+        font-size: 12px;
+        line-height: 20px;
+        color: #7D7D7D;
+        opacity: 0;
+        bottom: 0;
+        left: 0px;
+        transition: .2s all ease;
     }
 
     // .dropDown__content
@@ -65,16 +77,22 @@
     }
 }
 
-.showDropDown.dropDown {
-    &__btn {
+.dropDown.showDropDown {
+    .dropDown__btn {
         border-bottom: 2px solid #3E29E3;
 
         &::after {
             content: '';
             width: 9px;
             height: 6px;
-            background: url("../../../../images/ui/arrowUp.svg") no-repeat center/cover;
+            background: url("../../../../images/ui/arrow-up.svg") no-repeat center/cover;
             transition: .2s all ease;
         }
+    }
+
+    .dropDown__btn-promt {
+        opacity: 1;
+        bottom: 36px;
+        transition: .3s all ease;
     }
 }

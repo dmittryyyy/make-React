@@ -2,6 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     align-items: flex-end;
+    margin-bottom: 84px;
     // .textField__item
 
     &__item {
@@ -11,6 +12,7 @@
         flex-direction: column;
         margin-right: 32px;
         position: relative;
+        cursor: pointer;
     }
 
     // .textField__item-input
@@ -20,8 +22,6 @@
         border: none;
         background: #F2F2F2;
         border-bottom: 2px solid #AEADAE;
-        padding-bottom: 6px;
-        margin-top: 4px;
 
         &:hover {
             border-bottom: 2px solid #3E29E3;
@@ -32,9 +32,10 @@
         }
 
         &:focus~.textField__item-prompt {
-            opacity: 1;
             bottom: 32px;
+            font-size: 12px;
             transition: .3s all ease;
+            opacity: 1;
         }
     }
 
@@ -42,13 +43,40 @@
 
     &__item-prompt {
         position: absolute;
-        font-size: 12px;
+        font-size: 16px;
         line-height: 20px;
         color: #7D7D7D;
         opacity: 0;
-        bottom: 0;
+        bottom: 6px;
         left: 3px;
         transition: .3s all ease;
+    }
+
+    // .textField__item-error
+
+    &__item-error {
+        position: absolute;
+        font-size: 14px;
+        line-height: 20px;
+        color: #E80F3B;
+        opacity: 0;
+        bottom: -26px;
+        left: 3px;
+        transition: .3s all ease;
+    }
+
+    &__item.notValid {
+        .textField__item-input {
+            border-bottom: 4px solid #E80F3B;
+        }
+
+        .textField__item-input:focus~.textField__item-prompt {
+            color: #E80F3B;
+        }
+
+        .textField__item-error {
+            opacity: 1;
+        }
     }
 
     // .textField__item-title
@@ -57,6 +85,6 @@
         font-size: 14px;
         line-height: 20px;
         color: #7D7D7D;
-        margin-bottom: 16px;
+        margin-bottom: 40px;
     }
 }

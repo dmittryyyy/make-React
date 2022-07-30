@@ -1,35 +1,62 @@
 .App {
-  padding: 32px 48px 64px 64px;
-  max-width: 1312px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
-  grid-auto-flow: dense;
-  grid-template-areas:
-    "hd hd hd hd hd hd hd hd hd hd hd hd"
-    "sd sd sd mt mt mt mt mt mt mt mt mt"
-    ". . . main main main main main main main main main"
-    "ft ft ft ft ft ft ft ft ft ft ft ft";
-}
+  //App__menu
+  &__menu {
+    margin: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2000;
+    transform: scale(0);
+    transition: .2s all ease;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
 
-.header {
-  grid-area: hd;
-}
+  .App__menu.show {
+    display: block;
+    transform: scale(1);
+    transition: .3s all ease;
+  }
 
-.mainTop {
-  grid-area: mt;
-}
+  //App__container
+  &__container {
+    padding: 32px 48px 64px 64px;
+    max-width: 1312px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+    grid-auto-flow: dense;
+    grid-column-gap: 32px;
+    grid-template-areas:
+      "hd hd hd hd hd hd hd hd hd hd hd hd"
+      "sd sd sd mt mt mt mt mt mt mt mt mt"
+      ". . . main main main main main main main main main"
+      "ft ft ft ft ft ft ft ft ft ft ft ft";
 
-.sidebar {
-  grid-area: sd;
-}
+    .header {
+      grid-area: hd;
+    }
 
-main {
-  grid-area: main;
-}
+    .mainTop {
+      grid-area: mt;
+    }
 
-.footer {
-  grid-area: ft;
+    .sidebar {
+      grid-area: sd;
+    }
+
+    main {
+      grid-area: main;
+    }
+
+    .footer {
+      grid-area: ft;
+    }
+  }
 }
 
 //mobile
@@ -107,28 +134,34 @@ h4 {
 
 @media(max-width: 928.98px) {
   .App {
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-areas:
-      "hd hd hd hd hd hd hd hd"
-      "sd sd sd main main main main"
-      "ft ft ft ft ft ft ft ft";
+    &__container {
+      grid-template-columns: repeat(8, 1fr);
+      grid-template-areas:
+        "hd hd hd hd hd hd hd hd"
+        "sd sd sd main main main main"
+        "ft ft ft ft ft ft ft ft";
+    }
   }
 }
 
 @media(max-width: 424.98px) {
   .App {
-    grid-template-columns: repeat(4, 1fr);
-    grid-column-gap: 24px;
-    grid-template-areas:
-      "hd hd hd hd"
-      "sd main main main"
-      "ft ft ft ft";
+    &__container {
+      grid-template-columns: repeat(4, 1fr);
+      grid-column-gap: 24px;
+      grid-template-areas:
+        "hd hd hd hd"
+        "sd main main main"
+        "ft ft ft ft";
+    }
   }
 }
 
 @media(max-width: 320px) {
   .App {
-    display: flex;
-    flex-direction: column;
+    &__container {
+      display: flex;
+      flex-direction: column;
+    }
   }
 }

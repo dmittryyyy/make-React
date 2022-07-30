@@ -24,29 +24,44 @@
         padding: 16px 32px;
         border-radius: 32px;
         margin-top: 24px;
-        display: inline-block;
-        max-width: 148px;
-        text-align: center;
-        background: linear-gradient(45deg, #DD80ED 0%, #3D28E3 100%);
+        border: none;
+        background-image: linear-gradient(45deg, #DD80ED 0%, #3D28E3 100%);
+        z-index: 1;
         cursor: pointer;
 
-        &::after {
-            content: '';
+        &::before {
             position: absolute;
+            content: "";
             top: 0;
+            right: 0;
+            bottom: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            color: #FFFFFF;
-            text-decoration: none;
-            background: linear-gradient(206.57deg, #DD80ED 0%, #3D28E3 83.33%);
-            border-radius: 32px;
+            background-image: linear-gradient(225deg, #DD80ED 0%, #3D28E3 100%);
+            z-index: -1;
+            transition: opacity 0.5s linear;
             opacity: 0;
-            transition: opacity 0.5s;
+            border-radius: 32px;
         }
 
-        &:hover:after {
-            background: linear-gradient(225deg, #DD80ED 0%, #3D28E3 100%);
+        &::after {
+            position: absolute;
+            content: "";
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: linear-gradient(206.57deg, #DD80ED 0%, #3D28E3 83.33%);
+            z-index: -1;
+            transition: opacity 0.5s linear;
+            opacity: 0;
+            border-radius: 32px;
+        }
+
+        &:hover::before {
+            opacity: 1;
+        }
+
+        &:active::after {
             opacity: 1;
         }
     }

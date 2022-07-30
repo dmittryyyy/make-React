@@ -56,6 +56,7 @@
 
     &__row {
         display: flex;
+        margin-bottom: 48px;
     }
 
     // .item__row-name
@@ -72,7 +73,6 @@
     // .item__row-text
 
     &__row-text {
-        margin-bottom: 48px;
     }
 }
 

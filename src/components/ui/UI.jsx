@@ -24,7 +24,7 @@ export const UI = () => {
                     <TextField />
                 </div>
 
-                <div className="content__block">
+                <div className="content__block dropdown">
                     <div className="content__block-titleText">
                         <Subtitle title={'Выпадающий список'} description={'Компонент состоит из текстового поля и выпадающей подсказки'} />
                     </div>

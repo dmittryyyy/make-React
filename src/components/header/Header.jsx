@@ -1,6 +1,7 @@
 import React from 'react';
 
 import logo from "../../images/header/logo.svg"
+import { Sidebar } from '../sidebar/Sidebar';
 
 import './header.scss';
 
@@ -13,7 +14,7 @@ export const Header = ({ showMenu }) => {
                     <img src={logo} alt="Логотип" className="header__left-logo" />
                     <div className="header__name">
                         <div className="header__name-surname">Болобченко</div>
-                        <div className="header__name-patronymic">Дмитрий Евгеньевич</div>
+                        <span className="header__name-patronymic">Дмитрий Евгеньевич</span>
                     </div>
                 </div>
 

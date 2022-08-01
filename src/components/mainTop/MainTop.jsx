@@ -7,7 +7,7 @@ export const MainTop = () => {
     <div className="mainTop" id='parting-word'>
       <div className="mainTop__title">
         <h1 className='mainTop__title-title'>Тестовое задание</h1>
-        <h3 className='mainTop__title-subtitle'>Уровень: junior</h3>
+        <h5 className='mainTop__title-subtitle'>Уровень: junior</h5>
       </div>
       <div className="mainTop__description">
         <p className='mainTop__title-text'>Привет! Твоё тестовое задание — грамотно заверстать эту прекрасную страничку.

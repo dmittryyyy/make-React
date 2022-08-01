@@ -1,5 +1,10 @@
+@import '../../mixins/media.scss';
+
 .grid {
     margin-bottom: 80px;
+    @include for-size (smallMob) {
+        text-align: center;
+    }
     // .grid__title
 
     &__title {
@@ -8,19 +13,19 @@
 
     // .grid__content
 
-    &__content {
-    }
+    &__content {}
+
     &__content:not(:last-child) {
         margin-bottom: 64px;
     }
 }
+
 .content {
 
     // .content__list-title
 
     &__list-title {
-        font-size: 24px;
-        line-height: 32px;
+        font-weight: 700;
         margin-bottom: 32px;
     }
 
@@ -30,30 +35,27 @@
         max-width: 904px;
     }
 }
+
 .list {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 48px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    @include for-size(tab) {
+        grid-template-columns: repeat(2, 1fr);
+    }
     // .list__item
 
     &__item {
-
+        margin-bottom: 48px;
     }
 
     // .list__item-name
 
     &__item-name {
-        font-size: 14px;
-        line-height: 20px;
-        color: #7D7D7D;
     }
 
     // .list__item-meaning
 
     &__item-meaning {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 400;
         padding-top: 8px;
     }
 }

@@ -44,11 +44,16 @@
         flex-direction: column;
         align-items: flex-end;
         cursor: pointer;
-
         &:hover {
             .header__menu-bottom {
                 width: 32px;
-                transition: .4s ease;
+                transition: .3s ease;
+            }
+
+            .header__menu-top {
+                background-color: black;
+                width: 24px;
+                transition: .3s ease;
             }
         }
     }
@@ -60,6 +65,7 @@
         width: 32px;
         height: 2px;
         margin-bottom: 6px;
+        transition: .3s ease;
     }
 
     // .header__menu-bottom
@@ -68,7 +74,7 @@
         background-color: black;
         width: 24px;
         height: 2px;
-        transition: .4s ease;
+        transition: .3s ease;
     }
 
     // .header__title

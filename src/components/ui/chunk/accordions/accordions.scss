@@ -1,6 +1,7 @@
 .accordion {
     width: 100%;
     max-width: 904px;
+    margin-bottom: 160px;
     // .accordion__item
 
     &__item {
@@ -29,6 +30,7 @@
     // .accordion__title-name
 
     &__title-name {
+        font-weight: 500;
         color: #7D7D7D;
     }
 

@@ -19,29 +19,30 @@ export const UI = () => {
 
             <div className="ui__content">
 
-                <div className="content__block">
+                <div className="content__block ui__content-item" >
                     <h3 className="content__block-title">Текстовое поле</h3>
                     <TextField />
                 </div>
 
-                <div className="content__block dropdown">
+                <div className="content__block ui__content-item" >
                     <div className="content__block-titleText">
-                        <Subtitle title={'Выпадающий список'} description={'Компонент состоит из текстового поля и выпадающей подсказки'} />
+                    <h3 className="content__block-title">Выпадающий список</h3>
+                    <p>Компонент состоит из текстового поля и выпадающей подсказки</p>
                     </div>
                     <DropDown />
                 </div>
 
-                <div className="content__block">
+                <div className="content__block ui__content-item" >
                     <h3 className="content__block-title">Кнопка</h3>
                     <Buttons />
                 </div>
 
-                <div className="content__block">
+                <div className="content__block ui__content-item" >
                     <h3 className="content__block-title">Чекбокс, радиобаттон</h3>
                     <Checkboxs />
                 </div>
 
-                <div className="content__block">
+                <div className="content__block ui__content-item" >
                     <h3 className="content__block-title">Аккордеон</h3>
                     <Accordions />
                 </div>

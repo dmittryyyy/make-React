@@ -20,7 +20,9 @@ export const Sidebar = () => {
 
     const onActiveItemMenu = (e) => {
         let scrollTop = document.documentElement.scrollTop;
-        if (scrollTop <= 140) {
+        if (scrollTop == 0) {
+
+        } else if (scrollTop <= 140) {
             setActiveLink(itemsMenu[0].name);
         } else if (scrollTop <= 2636) {
             setActiveLink(itemsMenu[1].name);
@@ -33,15 +35,13 @@ export const Sidebar = () => {
 
     return (
         <div className="sidebar">
-            <div className="sidebar__list">
-                <ul>
-                    {itemsMenu.map((item) => (
-                        <li key={item.name} value={activeLink} className="sidebar__list-item" onClick={(e) => onActiveItemMenu(e)}>
-                            <a style={activeLink === item.name ? { color: '#3D28E1' } : {}} className="sidebar__list-link" href={item.link}>{item.name}</a>
-                        </li>
-                    ))}
-                </ul>
-            </div>
+            <ul className="sidebar__list">
+                {itemsMenu.map((item) => (
+                    <li key={item.name} value={activeLink} className="sidebar__list-item" onClick={(e) => onActiveItemMenu(e)}>
+                        <a style={activeLink === item.name ? { color: '#3D28E1' } : {}} className="sidebar__list-link" href={item.link}>{item.name}</a>
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }

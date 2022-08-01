@@ -1,9 +1,14 @@
+@import '../../mixins/media.scss';
+
 .typography {
     margin-bottom: 80px;
     // .typography__subtitle
 
     &__title {
         margin-bottom: 48px;
+        @include for-size(smallMob) {
+            text-align: center;
+        }
     }
 }
 
@@ -15,6 +20,9 @@
         display: flex;
         border-bottom: 1px solid #CBCBCC;
         margin-bottom: 48px;
+        @include for-size (smallMob) {
+            justify-content: center;
+        }
     }
 
     // .tabsBar__tabs-btn
@@ -22,6 +30,7 @@
     &__tabs-btn {
         margin-right: 32px;
         padding-bottom: 14px;
+        color: #7D7D7D;
         cursor: pointer;
     }
 
@@ -32,7 +41,8 @@
 
 .btnActive {
     border-bottom: 2px solid #3E29E3;
-
+    color: #1B1B1B;
+    font-weight: 500;
 }
 
 .content {
@@ -42,9 +52,15 @@
     &__item {
         display: none;
     }
-}
 
-.desktop {}
+    &__item.desktop{
+        @include fontsDesktop;
+    }
+
+    &__item.mobile {
+        @include fontsMob;
+    }
+}
 
 .tabActive {
     display: block;
@@ -55,19 +71,19 @@
     // .item__row
 
     &__row {
-        display: flex;
+        display: grid;
+        grid-gap: 32px 48px;
+        grid-template-columns: minmax(min-content, 280px) 1fr;
         margin-bottom: 48px;
+        @include for-size (smallMob) {
+            text-align: center;
+        }
     }
 
     // .item__row-name
 
     &__row-name {
-        font-size: 14px;
-        line-height: 20px;
         color: #7D7D7D;
-        width: 100%;
-        max-width: 280px;
-        margin-right: 32px;
     }
 
     // .item__row-text
@@ -75,5 +91,3 @@
     &__row-text {
     }
 }
-
-.mobile {}

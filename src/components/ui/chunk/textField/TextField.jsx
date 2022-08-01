@@ -5,52 +5,56 @@ import './textFiled.scss';
 export const TextField = () => {
 
     const [email, setEmail] = useState('');
-    const [isValue, setIsValue] = useState(false);
     const [error, setError] = useState('');
+    const [activeInput, setActiveInput] = useState(null);
 
-    const validInput = (e) => {
-        setEmail(e.target.value);
+    const validInput = () => {
         const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-        if (!e.target.value) {
-            setError('Поле не может быть пустым');
+        if (!re.test(String(email).toLowerCase())) {
+            setError('Некоректный E-mail!');
         } else {
-            if (!re.test(String(email).toLowerCase())) {
-                setError('Некоректный E-mail!');
-            } else {
-                setError('');
-            }
+            setError('');
         }
     }
 
-    const blurInput = (e) => {
-        if (e.target.name === 'input') {
-            setIsValue(true);
+    const onBlurInput = () => {
+        if(!email) {
+            setActiveInput(false);
+            setError('Поле не может быть пустым');
         } else {
-            setIsValue(false);
+            validInput();
         }
     };
 
     return (
         <div className="textField">
-            <label className={`textField__item ${error && isValue ? 'notValid' : ''}`}>
-                <div className="textField__item-title">Интерактивный</div>
-                <input onChange={e => validInput(e)} value={email} onBlur={e => blurInput(e)} name='input' className="textField__item-input" type="email" placeholder='E-mail'/>
+            <label className={`textField__item ${error ? 'notValid' : ''}`}>
+                <span className="textField__item-title">Интерактивный</span>
+                <input className={`textField__item-input ${activeInput || email ? 'activeInput' : ''} ${error ? 'notValid' : ''}`}
+                onChange={e => setEmail(e.target.value)} 
+                onBlur={() => onBlurInput()} 
+                onFocus={(e) => setActiveInput(true)} name='input' type="email" />
                 <span className="textField__item-prompt">E-mail</span>
-                <div className="textField__item-error">{isValue ? error : ''}</div>
+                <p className="textField__item-error">{error}</p>
             </label>
-            <label className="textField__item">
-                <div className="textField__item-title">Ховер</div>
-                <input className="textField__item-input" style={{borderBottom: '2px solid #3E29E3'}}placeholder='E-mail'/>
+
+            <label className="textField__item" style={{borderColor: '#3E29E3'}}>
+                <span className="textField__item-title">Ховер</span>
+                <input className="textField__item-input" disabled />
+                <span className="textField__item-prompt">E-mail</span>
             </label>
-            <label className="textField__item">
-                <div className="textField__item-title">Ввод</div>
-                <input className="textField__item-input" style={{borderBottom: '4px solid #3E29E3', color: '#1B1B1B'}} placeholder='office@make.st'/>
+
+            <label className="textField__item focus">
+                <span className="textField__item-title">Ввод</span>
+                <input className="textField__item-input activeInput" disabled value={'office@make.st'} />
+                <span className="textField__item-prompt">E-mail</span>
             </label>
-            <label className="textField__item notValid">
-                <div className="textField__item-title">Ошибка</div>
-                <input className="textField__item-input" style={{borderBottom: '4px solid #E80F3B'}} placeholder='officemake.st'/>
-                <span className="textField__item-prompt error">E-mail</span>
-                <div className="textField__item-error">Текст ошибки</div>
+
+            <label className="textField__item notValid error">
+                <span className="textField__item-title">Ввод</span>
+                <input className="textField__item-input" disabled value={'officemake.st'} />
+                <span className="textField__item-prompt">E-mail</span>
+                <p className="textField__item-error">Текст ошибки</p>
             </label>
         </div>
     )

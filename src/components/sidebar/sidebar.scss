@@ -1,6 +1,10 @@
+@import '../../mixins/media.scss';
 .sidebar {
-    position: sticky;
+    position: fixed;
     top: 310px;
+    @include for-size(tab) {
+        display: none;
+    }
     // .sidebar__list
 
     &__list {

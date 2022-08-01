@@ -12,8 +12,8 @@ export const Checkboxs = () => {
                     <div className="checks__name">Выбери меня</div>
                 </label>
                 <label className="checks">
-                    <input type="checkbox" className="checks__input"/>
-                    <div className="checks__fake"></div>
+                    <input type="checkbox" disabled className="checks__input"/>
+                    <div className="checks__fake" style={{border: '2px solid #3E29E3'}}></div>
                     <div className="checks__name">Выбери меня</div>
                 </label>
                 <label className="checks">
@@ -30,8 +30,8 @@ export const Checkboxs = () => {
                     <div className="circles__name">Пластмассовый мир победил</div>
                 </label>
                 <label className="circles">
-                    <input type="radio" className="circles__input"/>
-                    <div className="circles__fake"></div>
+                    <input type="radio" disabled className="circles__input"/>
+                    <div className="circles__fake" style={{border: '2px solid #3E29E3'}}></div>
                     <div className="circles__name">Макет оказался сильней</div>
                 </label>
                 <label className="circles">

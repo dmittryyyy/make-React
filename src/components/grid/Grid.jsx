@@ -8,6 +8,7 @@ import mob from '../../images/grid/mob.png'
 import './grid.scss';
 
 export const Grid = () => {
+
     return (
         <div className="grid" id='grid'>
 
@@ -25,20 +26,20 @@ export const Grid = () => {
 
                 <div className="list">
                     <div className="list__item">
-                        <p className="list__item-name">Контент</p>
-                        <h3 className="list__item-meaning">1072–1312</h3>
+                        <span className="list__item-name">Контент</span>
+                        <h5 className="list__item-meaning">1072–1312</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Колонок</p>
-                        <h3 className="list__item-meaning">12</h3>
+                        <span className="list__item-name">Колонок</span>
+                        <h5 className="list__item-meaning">12</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Ширина колонки</p>
-                        <h3 className="list__item-meaning">60-80</h3>
+                        <span className="list__item-name">Ширина колонки</span>
+                        <h5 className="list__item-meaning">60-80</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Межколонник</p>
-                        <h3 className="list__item-meaning">32</h3>
+                        <span className="list__item-name">Межколонник</span>
+                        <h5 className="list__item-meaning">32</h5>
                     </div>
                 </div>
 
@@ -50,20 +51,20 @@ export const Grid = () => {
 
                 <div className="list">
                     <div className="list__item">
-                        <p className="list__item-name">Контент</p>
-                        <h3 className="list__item-meaning">672-928</h3>
+                        <span className="list__item-name">Контент</span>
+                        <h5 className="list__item-meaning">672-928</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Колонок</p>
-                        <h3 className="list__item-meaning">8</h3>
+                        <span className="list__item-name">Колонок</span>
+                        <h5 className="list__item-meaning">8</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Ширина колонки</p>
-                        <h3 className="list__item-meaning">56-88</h3>
+                        <span className="list__item-name">Ширина колонки</span>
+                        <h5 className="list__item-meaning">56-88</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Межколонник</p>
-                        <h3 className="list__item-meaning">32</h3>
+                        <span className="list__item-name">Межколонник</span>
+                        <h5 className="list__item-meaning">32</h5>
                     </div>
                 </div>
 
@@ -75,20 +76,20 @@ export const Grid = () => {
 
                 <div className="list">
                     <div className="list__item">
-                        <p className="list__item-name">Контент</p>
-                        <h3 className="list__item-meaning">296-424</h3>
+                        <span className="list__item-name">Контент</span>
+                        <h5 className="list__item-meaning">296-424</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Колонок</p>
-                        <h3 className="list__item-meaning">4</h3>
+                        <span className="list__item-name">Колонок</span>
+                        <h5 className="list__item-meaning">4</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Ширина колонки</p>
-                        <h3 className="list__item-meaning">56-88</h3>
+                        <span className="list__item-name">Ширина колонки</span>
+                        <h5 className="list__item-meaning">56-88</h5>
                     </div>
                     <div className="list__item">
-                        <p className="list__item-name">Межколонник</p>
-                        <h3 className="list__item-meaning">24</h3>
+                        <span className="list__item-name">Межколонник</span>
+                        <h5 className="list__item-meaning">24</h5>
                     </div>
                 </div>
 

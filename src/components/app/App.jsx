@@ -29,11 +29,11 @@ function App() {
     <div className="App">
 
       <div className={`App__menu ${isMenu ? 'show' : ''}`}>
-        <Menu hideMenu={showHideMenu}/>
+        <Menu hideMenu={showHideMenu} />
       </div>
 
       <div className="App__container">
-        <Header showMenu={showHideMenu}/>
+        <Header showMenu={showHideMenu} />
 
         <Sidebar />
 

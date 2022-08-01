@@ -1,4 +1,8 @@
+@import '../../mixins/media.scss';
 .mainTop {
+    @include for-size (smallMob) {
+        text-align: center;
+    }
     // .mainTop__title
 
     &__title {
@@ -8,17 +12,12 @@
     // .mainTop__title-title
 
     &__title-title {
-        font-size: 48px;
-        line-height: 56px;
         padding-bottom: 16px;
     }
 
     // .mainTop__title-subtitle
 
     &__title-subtitle {
-        font-size: 24px;
-        font-weight: 400;
-        line-height: 32px;
     }
 
     // .mainTop__description
@@ -31,7 +30,5 @@
     // .mainTop__title-text
 
     &__title-text {
-        font-size: 16px;
-        line-height: 24px;
     }
 }

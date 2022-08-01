@@ -6,6 +6,7 @@ import social from '../../images/menu/iconTel.svg';
 import './menu.scss';
 
 export const Menu = ({ hideMenu }) => {
+
     return (
         <div className="menu">
             <div className="wrapper">
@@ -16,7 +17,7 @@ export const Menu = ({ hideMenu }) => {
                             <p className="menu__logo-text">Задание выполнил</p>
                         </div>
                         <div className="menu__close" onClick={(e) => hideMenu()}>
-                            <div className="menu__close-img"><svg width='24px' height='24px'
+                            <div className="menu__close-img"><svg width='24px' height='24px' fill={window.innerWidth < 840 ? '#1B1B1B' : '#FFFFFF'}
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.4142 10L19.1924 2.22184L17.7782 0.807624L10 8.5858L2.22183 0.807624L0.807612 2.22184L8.58579 10L0.807612 17.7782L2.22183 19.1924L10 11.4142L17.7782 19.1924L19.1924 17.7782L11.4142 10Z" />
                             </svg>
@@ -29,7 +30,7 @@ export const Menu = ({ hideMenu }) => {
                         <a href="tel:+79617208074" className="menu__about-number">+7 (961) 720-80-74</a>
                     </div>
                     <div className="menu__footer">
-                        <img className="menu__footer-img" src={social} alt="Иконка Telegram" />
+                        <div className="menu__footer-img"><img src={social} alt="Иконка Telegram" /></div>
                         <a className="menu__footer-link" href="https://t.me/dmittryyyyy" targethtml="_blank">Ссылка на соцсеть/мессенджер</a>
                     </div>
                 </div>

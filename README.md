@@ -6,7 +6,7 @@
 Для запуска проекта:
 
 - Сделать клон проекта:
-git clone https://github.com/dmittryyyy/make-test.git
+git clone https://github.com/dmittryyyy/make-React
 
 - Установить необходимые зависимости:
 npm i в корне клонированного проекта

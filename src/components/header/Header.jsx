@@ -1,7 +1,6 @@
 import React from 'react';
 
 import logo from "../../images/header/logo.svg"
-import { Sidebar } from '../sidebar/Sidebar';
 
 import './header.scss';
 
@@ -18,7 +17,7 @@ export const Header = ({ showMenu }) => {
                     </div>
                 </div>
 
-                <div className="header__menu" onClick={(e) => showMenu()}>
+                <div className="header__menu" onClick={showMenu}>
                     <div className="header__menu-top"></div>
                     <div className="header__menu-bottom"></div>
                 </div>

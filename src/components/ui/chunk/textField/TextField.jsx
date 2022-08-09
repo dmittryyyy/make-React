@@ -31,8 +31,8 @@ export const TextField = () => {
             <label className={`textField__item ${error ? 'notValid' : ''}`}>
                 <span className="textField__item-title">Интерактивный</span>
                 <input className={`textField__item-input ${activeInput || email ? 'activeInput' : ''} ${error ? 'notValid' : ''}`}
-                onChange={e => setEmail(e.target.value)} 
-                onBlur={() => onBlurInput()} 
+                onChange={(e) => setEmail(e.target.value)} 
+                onBlur={onBlurInput} 
                 onFocus={(e) => setActiveInput(true)} name='input' type="email" />
                 <span className="textField__item-prompt">E-mail</span>
                 <p className="textField__item-error">{error}</p>

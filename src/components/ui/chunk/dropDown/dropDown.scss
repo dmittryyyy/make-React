@@ -28,6 +28,10 @@
         border-bottom: 2px solid #AEADAE;
         cursor: pointer;
 
+        &_hover {
+            border-bottom: 2px solid #3E29E3;
+        }
+
         &:hover {
             border-bottom: 2px solid #3E29E3;
         }
@@ -77,6 +81,11 @@
 
         &_choose {
             color: #3E29E3;
+        }
+
+        &_hover {
+            background-color: #3E29E3;
+            color: #FFFFFF;
         }
 
         &:hover {

@@ -56,6 +56,10 @@
             border: 2px solid #3E29E3;
         }
 
+        &_hover {
+            border: 2px solid #3E29E3;
+        }
+
         &::after {
             position: absolute;
             content: '';
@@ -123,6 +127,10 @@
         border: 2px solid #AEADAE;
         cursor: pointer;
         transition: .3s linear;
+
+        &_hover {
+            border: 2px solid #3E29E3;
+        }
 
         &::after {
             position: absolute;

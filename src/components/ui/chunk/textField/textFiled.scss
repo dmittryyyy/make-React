@@ -40,6 +40,10 @@
         .activeInput~.textField__item-prompt {
             opacity: 0;
         }
+
+        &_hover {
+            border-color: #3E29E3;
+        }
     }
 
     &__item.notValid {

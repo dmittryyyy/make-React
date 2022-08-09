@@ -17,7 +17,7 @@ export const Menu = ({ hideMenu }) => {
                             <p className="menu__logo-text">Задание выполнил</p>
                         </div>
                         <div className="menu__close" onClick={hideMenu}>
-                            <div className="menu__close-img"><svg width='24px' height='24px' fill={window.innerWidth < 840 ? '#1B1B1B' : '#FFFFFF'}
+                            <div className="menu__close-img"><svg width='24px' height='24px'
                                 viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M11.4142 10L19.1924 2.22184L17.7782 0.807624L10 8.5858L2.22183 0.807624L0.807612 2.22184L8.58579 10L0.807612 17.7782L2.22183 19.1924L10 11.4142L17.7782 19.1924L19.1924 17.7782L11.4142 10Z" />
                             </svg>

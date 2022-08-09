@@ -38,7 +38,7 @@ export const TextField = () => {
                 <p className="textField__item-error">{error}</p>
             </label>
 
-            <label className="textField__item" style={{borderColor: '#3E29E3'}}>
+            <label className="textField__item textField__item_hover">
                 <span className="textField__item-title">Ховер</span>
                 <input className="textField__item-input" disabled />
                 <span className="textField__item-prompt">E-mail</span>

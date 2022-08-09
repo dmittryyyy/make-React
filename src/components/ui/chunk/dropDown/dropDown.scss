@@ -37,6 +37,7 @@
             width: 9px;
             height: 6px;
             background: url("../../../../images/ui/arrow-down.svg") no-repeat center/cover;
+            transition: .2s all ease;
         }
     }
 
@@ -87,10 +88,7 @@
         border-bottom: 2px solid #3E29E3;
 
         &::after {
-            content: '';
-            width: 9px;
-            height: 6px;
-            background: url("../../../../images/ui/arrow-up.svg") no-repeat center/cover;
+            transform: rotate(180deg);
             transition: .2s all ease;
         }
     }

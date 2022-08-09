@@ -40,6 +40,7 @@
         width: 9px;
         height: 6px;
         background: url('../../../../images/ui/arrow-down.svg');
+        transition: .3s ease all;
     }
 
     // .accordion__item-content
@@ -73,7 +74,8 @@
         }
 
         .accordion__title-img {
-            background: url('../../../../images/ui/arrow-up.svg');
+            transform: rotate(180deg);
+            transition: .3s ease all;
         }
 
         .accordion__item-content {

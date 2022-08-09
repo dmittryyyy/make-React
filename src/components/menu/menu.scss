@@ -3,6 +3,10 @@
     background: url('../../images/menu/bgMenu.png') no-repeat center / cover;
     height: 100%;
     overflow: hidden;
+    @include fontsDesktop;
+    @include for-size (mob) {
+        @include fontsMob;
+    }
 
     .wrapper {
         margin: 8px;

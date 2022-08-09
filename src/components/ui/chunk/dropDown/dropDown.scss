@@ -75,6 +75,10 @@
         padding: 16px 24px;
         cursor: pointer;
 
+        &_choose {
+            color: #3E29E3;
+        }
+
         &:hover {
             background: #3E29E3;
             color: #FFFFFF;

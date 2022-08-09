@@ -27,9 +27,9 @@ export const DropDown = () => {
                     {isActive && (
                         <div className="dropDown__content">
                             {optionsSelect.map((item) => (
-                                <div key={item} className="dropDown__item"
+                                <div key={item} className={`dropDown__item ${selected === item ? 'dropDown__item_choose' : ''}`}
                                     onClick={(e) => toggleSelectItem(item)}>
-                                    <p style={selected === item ? { color: '#3D28E1' } : {}}>{item}</p>
+                                    <p>{item}</p>
                                 </div>
                             ))}
                         </div>

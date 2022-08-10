@@ -1,5 +1,6 @@
-@import '../../mixins/media.scss';
+@import '../../style/mixins/media.scss';
 .mainTop {
+    margin-bottom: 80px;
     @include for-size (smallMob) {
         text-align: center;
     }

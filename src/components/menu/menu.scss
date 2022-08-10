@@ -1,4 +1,4 @@
-@import '../../mixins/media.scss';
+@import '../../style/mixins/media.scss';
 
 .menu {
     display: grid;
@@ -7,50 +7,34 @@
     background: url('../../images/menu/bgMenu.png') no-repeat center / cover;
     height: 100%;
     overflow: hidden;
+    padding: 8px;
     @include fontsDesktop;
 
     @include for-size (tab) {
         grid-template-columns: repeat(8, 1fr);
+        grid-column-gap: 0;
     }
 
     @include for-size (mob) {
         grid-template-columns: repeat(4, 1fr);
-        grid-column-gap: 24px;
         @include fontsMob;
     }
 
-    .wrapper {
-        margin: 8px;
-        grid-column: 1 / 7;
-        height: 98%;
-        background-color: #FFFFFF;
-        // .wrapper__content
-
-        &__content {
-            height: inherit;
-            display: grid;
-            padding: 24px 0px 40px 56px;
-            @include for-size(tab) {
-                padding: 24px 0px 24px 24px;
-            }
-
-            @include for-size(smallMob) {
-                grid-template-columns: repeat(1, 1fr);
-                text-align: center;
-                padding: 24px 24px 24px 24px;
-            }
-        }
+    @include for-size (smallMob) {
+        text-align: center;
     }
 
     // .menu__header
 
     &__header {
-        grid-column: 1 / 7;
+        grid-column: 1 / 8;
+        grid-column-gap: inherit;
         display: grid;
         grid-template-columns: repeat(7, minmax(60px, 1fr));
         align-items: center;
         margin-bottom: 48px;
-        @include for-size(mob) {
+
+        @include for-size (smallMob) {
             display: flex;
             justify-content: space-between;
         }
@@ -62,15 +46,20 @@
         grid-column: 1 / 2;
         width: 56px;
         height: 56px;
+        justify-self: center;
     }
 
     // .menu__header-text
 
     &__header-text {
-        grid-column: 2 / 7;
+        grid-column: 2 / 8;
         font-size: 14px;
         line-height: 20px;
         color: #7D7D7D;
+
+        @include for-size (smallMob) {
+            grid-column: 1 / 5;
+        }
     }
 
     // .menu__header-close
@@ -78,17 +67,19 @@
     &__header-close {
         position: absolute;
         right: 0;
-        margin-right: 64px;
+        margin-right: 32px;
         cursor: pointer;
 
-        @include for-size(tab) {
+        @include for-size (smallMob) {
             position: inherit;
+            margin-right: 0;
         }
 
         svg {
             transition: .3s linear;
             fill: #FFFFFF;
-            @include for-size(tab) {
+
+            @include for-size (tab) {
                 fill: #1b1b1b;
             }
         }
@@ -105,6 +96,10 @@
 
     &__about {
         grid-column: 2 / 7;
+
+        @include for-size (smallMob) {
+            grid-column: 1 / 5;
+        }
     }
 
     // .menu__about-name
@@ -130,17 +125,18 @@
     // .menu__footer
 
     &__footer {
-        grid-column: 2 / 7;
+        grid-column: 2 / 8;
         display: flex;
         align-items: center;
-        margin-bottom: 40px;
+
+        @include for-size (smallMob) {
+            grid-column: 1 / 5;
+        }
     }
 
     // .menu__footer-img
 
     &__footer-img {
-        width: 100%;
-        height: 100%;
         width: 48px;
         height: 48px;
         justify-content: center;
@@ -152,6 +148,10 @@
         box-shadow: 0px 4px 8px 4px rgb(0 0 0 / 8%);
         transition: box-shadow 0.1s linear;
         cursor: pointer;
+
+        @include for-size (smallMob) {
+            margin-right: 0;
+        }
 
         &:hover {
             box-shadow: 6px 6px 10px 10px rgb(0 0 0 / 12%);
@@ -171,5 +171,27 @@
         font-weight: 500;
         color: #3E29E3;
         cursor: pointer;
+    }
+}
+
+.wrapper {
+    grid-column: 1 / 8;
+    display: grid;
+    grid-template-columns: repeat(7, minmax(60px, 1fr));
+    grid-template-rows: 100px;
+    background-color: #FFFFFF;
+    grid-column-gap: inherit;
+    padding: 24px 0 40px 0;
+
+    @include for-size (tab) {
+        grid-template-columns: repeat(7, 1fr);
+    }
+
+    @include for-size (mob) {
+        grid-template-columns: repeat(4, 1fr);
+        @include fontsMob;
+    }
+    @include for-size (smallMob) {
+        padding: 24px 12px 24px 12px;
     }
 }

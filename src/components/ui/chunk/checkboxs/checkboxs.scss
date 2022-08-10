@@ -1,24 +1,29 @@
 @import '../../../../mixins/media.scss';
+
 .checkboxs {
     display: grid;
     grid-template-columns: repeat(auto-fit, 344px);
     grid-gap: 32px;
     margin-bottom: 32px;
+
     @include for-size(smallMob) {
         grid-template-columns: repeat(1, 1fr);
     }
 
     // .checkboxs__item
 
-    &__item {
-    }
+    &__item {}
 }
 
-.checks {
+.checks,
+.circles {
     display: flex;
     align-items: center;
     cursor: pointer;
     margin-bottom: 24px;
+}
+
+.checks {
 
     &:hover {
         .checks__fake {
@@ -45,18 +50,7 @@
     // .checks__fake
 
     &__fake {
-        position: relative;
-        width: 24px;
-        height: 24px;
-        border: 2px solid #AEADAE;
-        cursor: pointer;
-        transition: .3s linear;
-
         &:hover {
-            border: 2px solid #3E29E3;
-        }
-
-        &_hover {
             border: 2px solid #3E29E3;
         }
 
@@ -66,11 +60,6 @@
             width: 14px;
             height: 10px;
             background: url('../../../../images/ui/checkbox/check.svg') no-repeat center/cover;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: .3s linear;
         }
     }
 
@@ -81,21 +70,35 @@
     }
 }
 
-.checks {
-    &:hover {
-        .checks__input:disabled~.checks__fake {
-            border: 2px solid #AEADAE;
-        }
+.circles__fake,
+.checks__fake {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    border: 2px solid #AEADAE;
+    cursor: pointer;
+    transition: .3s linear;
+
+    &_hover {
+        border: 2px solid #3E29E3;
+    }
+
+    &_disabled {
+        border: 2px solid #AEADAE;
+    }
+
+    &::after {
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        opacity: 0;
+        transition: .3s linear;
     }
 }
 
 .circles {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-    margin-bottom: 24px;
-
-
     &:hover {
         .circles__fake {
             border: 2px solid #3E29E3;
@@ -120,18 +123,7 @@
     // .circles__fake
 
     &__fake {
-        position: relative;
-        width: 24px;
-        height: 24px;
         border-radius: 100%;
-        border: 2px solid #AEADAE;
-        cursor: pointer;
-        transition: .3s linear;
-
-        &_hover {
-            border: 2px solid #3E29E3;
-        }
-
         &::after {
             position: absolute;
             content: '';
@@ -139,11 +131,6 @@
             height: 12px;
             background: #3E29E3;
             border-radius: 100%;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            opacity: 0;
-            transition: .3s linear;
         }
     }
 
@@ -151,13 +138,5 @@
 
     &__name {
         margin-left: 16px;
-    }
-}
-
-.circles {
-    &:hover {
-        .circles__input:disabled~.circles__fake {
-            border: 2px solid #AEADAE;
-        }
     }
 }

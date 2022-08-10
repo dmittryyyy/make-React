@@ -13,8 +13,6 @@
 
     // .grid__content
 
-    &__content {}
-
     &__content:not(:last-child) {
         margin-bottom: 64px;
     }
@@ -28,11 +26,6 @@
         font-weight: 700;
         margin-bottom: 32px;
     }
-
-    // .content__list-img
-
-    &__list-img {
-    }
 }
 
 .list {
@@ -45,11 +38,6 @@
 
     &__item {
         margin-bottom: 48px;
-    }
-
-    // .list__item-name
-
-    &__item-name {
     }
 
     // .list__item-meaning

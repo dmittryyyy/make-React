@@ -62,18 +62,18 @@
     // .header__menu-top
 
     &__menu-top {
-        background-color: black;
         width: 32px;
-        height: 2px;
         margin-bottom: 6px;
-        transition: .3s ease;
     }
 
     // .header__menu-bottom
 
     &__menu-bottom {
-        background-color: black;
         width: 24px;
+    }
+
+    &__menu-bottom, &__menu-top {
+        background-color: black;
         height: 2px;
         transition: .3s ease;
     }

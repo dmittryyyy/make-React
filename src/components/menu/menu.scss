@@ -1,39 +1,39 @@
 @import '../../mixins/media.scss';
+
 .menu {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(60px, 1fr));
+    grid-column-gap: 32px;
     background: url('../../images/menu/bgMenu.png') no-repeat center / cover;
     height: 100%;
     overflow: hidden;
     @include fontsDesktop;
+
+    @include for-size (tab) {
+        grid-template-columns: repeat(8, 1fr);
+    }
+
     @include for-size (mob) {
+        grid-template-columns: repeat(4, 1fr);
+        grid-column-gap: 24px;
         @include fontsMob;
     }
 
     .wrapper {
         margin: 8px;
-        max-width: 760px;
+        grid-column: 1 / 7;
         height: 98%;
         background-color: #FFFFFF;
-        @include for-size(tab) {
-            max-width: 450px;
-        }
-        // .menu__content
+        // .wrapper__content
 
         &__content {
             height: inherit;
-            padding: 24px 0px 40px 56px;
             display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            grid-template-rows: auto 1fr auto;
-            grid-column-gap: 32px;
-            @include for-size(mob) {
-                .menu__about {
-                    grid-column: 1 / 7;
-                }
-                .menu__footer {
-                    grid-column: 1 / 7;
-                }
-
+            padding: 24px 0px 40px 56px;
+            @include for-size(tab) {
+                padding: 24px 0px 24px 24px;
             }
+
             @include for-size(smallMob) {
                 grid-template-columns: repeat(1, 1fr);
                 text-align: center;
@@ -46,57 +46,51 @@
 
     &__header {
         grid-column: 1 / 7;
-        display: flex;
+        display: grid;
+        grid-template-columns: repeat(7, minmax(60px, 1fr));
         align-items: center;
         margin-bottom: 48px;
-        @include for-size(tab) {
+        @include for-size(mob) {
+            display: flex;
             justify-content: space-between;
         }
     }
 
-    // .menu__logo
+    // .menu__header-img
 
-    &__logo {
-        display: flex;
-        align-items: center;
-        margin-right: 32px;
+    &__header-img {
+        grid-column: 1 / 2;
+        width: 56px;
+        height: 56px;
     }
 
-    // .menu__logo-img
+    // .menu__header-text
 
-    &__logo-img {
-        max-width: 56px;
-        max-height: 56px;
-        margin-right: 46px;
-    }
-
-    // .menu__logo-text
-
-    &__logo-text {
+    &__header-text {
+        grid-column: 2 / 7;
         font-size: 14px;
         line-height: 20px;
         color: #7D7D7D;
     }
 
-    // .menu__close
+    // .menu__header-close
 
-    &__close {
+    &__header-close {
         position: absolute;
         right: 0;
         margin-right: 64px;
         cursor: pointer;
+
         @include for-size(tab) {
             position: inherit;
-            margin-right: 0;
         }
-    }
-
-    // .menu__close-img
-
-    &__close-img {
 
         svg {
             transition: .3s linear;
+            fill: #FFFFFF;
+            @include for-size(tab) {
+                fill: #1b1b1b;
+            }
         }
 
         &:hover {
@@ -147,7 +141,7 @@
     &__footer-img {
         width: 100%;
         height: 100%;
-        max-width: 48px;
+        width: 48px;
         height: 48px;
         justify-content: center;
         display: flex;

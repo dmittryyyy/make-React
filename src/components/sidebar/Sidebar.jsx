@@ -6,6 +6,7 @@ import './sidebar.scss';
 export const Sidebar = () => {
 
     const [activeLink, setActiveLink] = useState(null);
+    const [moveSideBar, setMoveSideBar] = useState();
 
     const itemsMenu = [
         { name: 'Напутственное слово', link: '#parting-word' },
@@ -21,7 +22,9 @@ export const Sidebar = () => {
     const onActiveItemMenu = (e) => {
         let scrollTop = document.documentElement.scrollTop;
         if (scrollTop == 0) {
-
+            setMoveSideBar(false);
+        } else if (scrollTop > 0) {
+            setMoveSideBar(true);
         } else if (scrollTop <= 140) {
             setActiveLink(itemsMenu[0].name);
         } else if (scrollTop <= 2636) {
@@ -34,7 +37,7 @@ export const Sidebar = () => {
     };
 
     return (
-        <div className="sidebar">
+        <div className={`sidebar ${moveSideBar ? 'sidebar_move' : ''}`}>
             <ul className="sidebar__list">
                 {itemsMenu.map((item) => (
                     <li key={item.name} value={activeLink} className="sidebar__list-item" onClick={(e) => onActiveItemMenu(e)}>

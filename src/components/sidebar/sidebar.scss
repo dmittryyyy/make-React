@@ -1,7 +1,8 @@
 @import '../../style/mixins/media.scss';
 .sidebar {
-    position: fixed;
+    position: sticky;
     top: 310px;
+    transition: .4s ease all;
     @include for-size(tab) {
         display: none;
     }
@@ -31,4 +32,10 @@
     .active__link {
         color: #3E29E3;
     }
+}
+
+.sidebar_move {
+    position: sticky;
+    top: 150px;
+    transition: .4s ease all;
 }

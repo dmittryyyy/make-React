@@ -7,7 +7,7 @@ import './typography.scss';
 
 export const Typography = () => {
 
-    const [ toggleState, setToggleState ] = useState(null);
+    const [toggleState, setToggleState] = useState(null);
 
     const itemsDesktop = [
         { name: 'Заголовок H1, 48/56, bold', text: <h1>Текст заголовка</h1> },
@@ -36,7 +36,7 @@ export const Typography = () => {
     };
 
     useEffect(() => {
-        if (window.innerWidth < 600) {
+        if (window.innerWidth < 424.98) {
             setToggleState(2);
         } else {
             setToggleState(1);
@@ -56,27 +56,31 @@ export const Typography = () => {
 
             <div className="tabsBar">
                 <div className="tabsBar__buttons">
-                    <p className={`tabsBar__tabs-btn ${toggleState === 1  ? 'btnActive' : ''}`} onClick={() => toggleTab(1)}>Десктоп</p>
-                    <p className={`tabsBar__tabs-btn ${toggleState === 2  ? 'btnActive' : ''}`} onClick={() => toggleTab(2)}>Телефон</p>
+                    <p className={`tabsBar__tabs-btn ${toggleState === 1 ? 'btnActive' : ''}`} onClick={() => toggleTab(1)}>Десктоп</p>
+                    <p className={`tabsBar__tabs-btn ${toggleState === 2 ? 'btnActive' : ''}`} onClick={() => toggleTab(2)}>Телефон</p>
                 </div>
 
                 <div className="tabsBar__content">
 
                     <div className={`content__item desktop ${toggleState === 1 ? 'tabActive' : ''}`}>
                         {itemsDesktop.map((item) => (
-                            <div key={item.name} className="item__row">
-                                <span className="item__row-name">{item.name}</span>
-                                {item.text}
-                            </div>
+                            <>
+                                <div className="item__row-name">
+                                    <span>{item.name}</span>
+                                </div>
+                                <div className="item__row-text">{item.text}</div>
+                            </>
                         ))}
                     </div>
 
                     <div className={`content__item mobile ${toggleState === 2 ? 'tabActive' : ''}`}>
                         {itemsMobile.map((item) => (
-                            <div key={item.name} className="item__row">
-                                <span className="item__row-name">{item.name}</span>
-                                {item.text}
-                            </div>
+                            <>
+                                <div className="item__row-name">
+                                    <span>{item.name}</span>
+                                </div>
+                                <div className="item__row-text">{item.text}</div>
+                            </>
                         ))}
                     </div>
                 </div>

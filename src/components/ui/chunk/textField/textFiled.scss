@@ -1,4 +1,4 @@
-@import '../../../../mixins/media.scss';
+@import '../../../../style/mixins/media.scss';
 .textField {
     display: grid;
     grid-template-columns: repeat(auto-fit, 280px);
@@ -20,8 +20,6 @@
 
     &__item {
         position: relative;
-        width: 100%;
-        max-width: 280px;
         display: flex;
         flex-direction: column;
         margin-right: 32px;
@@ -39,6 +37,10 @@
 
         .activeInput~.textField__item-prompt {
             opacity: 0;
+        }
+
+        &_hover {
+            border-color: #3E29E3;
         }
     }
 

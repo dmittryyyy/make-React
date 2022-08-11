@@ -1,6 +1,5 @@
 .accordion {
     width: 100%;
-    max-width: 904px;
     margin-bottom: 160px;
     // .accordion__item
 
@@ -10,6 +9,10 @@
         border-bottom: 1px solid #CBCBCC;
 
         &:hover {
+            border-bottom: 1px solid #3E29E3;
+        }
+
+        &_hover {
             border-bottom: 1px solid #3E29E3;
         }
     }
@@ -32,6 +35,10 @@
     &__title-name {
         font-weight: 500;
         color: #7D7D7D;
+
+        &_hover {
+            color: #1B1B1B;
+        }
     }
 
     // .accordion__title-img
@@ -40,6 +47,7 @@
         width: 9px;
         height: 6px;
         background: url('../../../../images/ui/arrow-down.svg');
+        transition: .3s ease all;
     }
 
     // .accordion__item-content
@@ -73,7 +81,8 @@
         }
 
         .accordion__title-img {
-            background: url('../../../../images/ui/arrow-up.svg');
+            transform: rotate(180deg);
+            transition: .3s ease all;
         }
 
         .accordion__item-content {
@@ -86,7 +95,6 @@
         .accordion__item-text {
             display: block;
             width: 100%;
-            max-width: 592px;
         }
     }
 }

@@ -1,4 +1,4 @@
-@import '../../mixins/media.scss';
+@import '../../style/mixins/media.scss';
 
 .typography {
     margin-bottom: 80px;
@@ -33,10 +33,6 @@
         color: #7D7D7D;
         cursor: pointer;
     }
-
-    // .tabsBar__content
-
-    &__content {}
 }
 
 .btnActive {
@@ -63,31 +59,20 @@
 }
 
 .tabActive {
-    display: block;
+    display: grid;
+    grid-gap: 32px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 48px;
+    @include for-size(mob) {
+        grid-gap: 12px;
+    }
 }
 
 .item {
-
-    // .item__row
-
-    &__row {
-        display: grid;
-        grid-gap: 32px 48px;
-        grid-template-columns: minmax(min-content, 280px) 1fr;
-        margin-bottom: 48px;
-        @include for-size (smallMob) {
-            text-align: center;
-        }
-    }
 
     // .item__row-name
 
     &__row-name {
         color: #7D7D7D;
-    }
-
-    // .item__row-text
-
-    &__row-text {
     }
 }

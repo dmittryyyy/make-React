@@ -18,7 +18,7 @@ export const Accordions = () => {
         <div className="accordion">
 
             <div className={`accordion__item ${isActiveAccordion ? 'open' : ''}`}>
-                <div className="accordion__title" onClick={(e) => openItemAccordion()}>
+                <div className="accordion__title" onClick={openItemAccordion}>
                     <p className='accordion__title-name'>Аккордеон</p>
                     <span className='accordion__title-img'></span>
                 </div>
@@ -29,9 +29,9 @@ export const Accordions = () => {
                 </div>
             </div>
 
-            <div className="accordion__item" style={{'borderBottom': '1px solid #3E29E3'}}>
+            <div className="accordion__item accordion__item_hover">
                 <div className="accordion__title">
-                    <p className='accordion__title-name' style={{'color': '#1b1b1b'}}>Аккордеон</p>
+                    <p className='accordion__title-name accordion__title-name_hover'>Аккордеон</p>
                     <span className='accordion__title-img'></span>
                 </div>
                 <div className="accordion__item-content">

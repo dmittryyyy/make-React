@@ -27,9 +27,9 @@ export const DropDown = () => {
                     {isActive && (
                         <div className="dropDown__content">
                             {optionsSelect.map((item) => (
-                                <div key={item} className="dropDown__item"
+                                <div key={item} className={`dropDown__item ${selected === item ? 'dropDown__item_choose' : ''}`}
                                     onClick={(e) => toggleSelectItem(item)}>
-                                    <p style={selected === item ? { color: '#3D28E1' } : {}}>{item}</p>
+                                    <p>{item}</p>
                                 </div>
                             ))}
                         </div>
@@ -39,7 +39,7 @@ export const DropDown = () => {
 
             <div className="selects__item">
                 <div className="dropDown">
-                    <label className='dropDown__btn' style={{ borderBottom: '2px solid #3D28E1' }}>
+                    <label className='dropDown__btn dropDown__btn_hover'>
                         <div className='dropDown__btn-text'>Выберете что нибудь</div>
                     </label>
                 </div>
@@ -54,8 +54,8 @@ export const DropDown = () => {
 
                     <div className="dropDown__content open">
                         {optionsSelect.map((item) => (
-                            <div key={item} className="dropDown__item open" style={item === optionsSelect[3] ? { background: '#3D28E1', color: '#FFFFFF' } : {}}>
-                                <p style={item === optionsSelect[2] ? { color: '#3D28E1' } : {}}>{item}</p>
+                            <div key={item} className={`dropDown__item open ${item === optionsSelect[3] ? 'dropDown__item_hover' : ''}`}>
+                                <p className={item === optionsSelect[2] ? 'dropDown__item_choose' : ''}>{item}</p>
                             </div>
                         ))}
                     </div>

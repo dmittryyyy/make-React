@@ -35,14 +35,17 @@ function App() {
       <div className="App__container">
         <Header showMenu={showHideMenu} />
 
-        <Sidebar />
-
-        <MainTop />
-
         <main>
-          <Grid />
-          <Typography />
-          <UI />
+          <div className="main__menu">
+            <Sidebar />
+          </div>
+
+          <div className="main__content">
+            <MainTop />
+            <Grid />
+            <Typography />
+            <UI />
+          </div>
         </main>
 
         <Footer />

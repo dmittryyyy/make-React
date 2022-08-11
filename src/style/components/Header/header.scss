@@ -13,8 +13,8 @@
     // .header__left-logo
 
     &__left-logo {
-        max-width: 56px;
-        max-height: 56px;
+        width: 56px;
+        height: 56px;
         margin-right: 24px;
     }
 
@@ -44,6 +44,7 @@
         flex-direction: column;
         align-items: flex-end;
         cursor: pointer;
+
         &:hover {
             .header__menu-bottom {
                 width: 32px;
@@ -75,28 +76,5 @@
         width: 24px;
         height: 2px;
         transition: .3s ease;
-    }
-
-    // .header__title
-
-    &__title {
-        color: #1B1B1B;
-        margin-top: 51px;
-    }
-
-    // .header__title-title
-
-    &__title-title {
-        font-size: 48px;
-        line-height: 56px;
-    }
-
-    // .header__title-subtitle
-
-    &__title-subtitle {
-        font-size: 24px;
-        line-height: 32px;
-        font-weight: 400;
-        padding-top: 16px;
     }
 }

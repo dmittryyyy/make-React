@@ -5,8 +5,6 @@ import logo from "../../images/header/logo.svg";
 import styles from './Header.module.scss';
 
 export const Header = ({ showMenu }) => {
-    console.log(styles)
-
     return (
         <>
             <header className={`header ${styles.header}`}>

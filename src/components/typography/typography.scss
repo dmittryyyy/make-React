@@ -6,6 +6,7 @@
 
     &__title {
         margin-bottom: 48px;
+
         @include for-size(smallMob) {
             text-align: center;
         }
@@ -20,6 +21,7 @@
         display: flex;
         border-bottom: 1px solid #CBCBCC;
         margin-bottom: 48px;
+
         @include for-size (smallMob) {
             justify-content: center;
         }
@@ -47,25 +49,42 @@
 
     &__item {
         display: none;
+        grid-gap: 32px;
+        grid-template-columns: repeat(2, 1fr);
+
+        @include for-size(mob) {
+            grid-gap: 12px;
+        }
     }
 
-    &__item.desktop{
+    &__item.desktop {
         @include fontsDesktop;
+
+        @include for-size(mob) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 0;
+
+            .item__row-text {
+                margin-bottom: 24px;
+            }
+        }
     }
 
     &__item.mobile {
         @include fontsMob;
+        @include for-size(smallMob) {
+            grid-template-columns: repeat(1, 1fr);
+            grid-gap: 0;
+
+            .item__row-text {
+                margin-bottom: 24px;
+            }
+        }
     }
 }
 
 .tabActive {
     display: grid;
-    grid-gap: 32px;
-    grid-template-columns: repeat(2, 1fr);
-    margin-bottom: 48px;
-    @include for-size(mob) {
-        grid-gap: 12px;
-    }
 }
 
 .item {

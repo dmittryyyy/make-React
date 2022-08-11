@@ -9,10 +9,6 @@
     @include for-size(smallMob) {
         grid-template-columns: repeat(1, 1fr);
     }
-
-    // .checkboxs__item
-
-    &__item {}
 }
 
 .checks,
@@ -124,6 +120,7 @@
 
     &__fake {
         border-radius: 100%;
+
         &::after {
             position: absolute;
             content: '';

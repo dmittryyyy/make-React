@@ -44,7 +44,7 @@ export const Typography = () => {
     }, []);
 
     return (
-        <div className="typography" id='typography'>
+        <div className="typography sectionContent" id='typography'>
 
             <div className="typography__title">
                 <Subtitle

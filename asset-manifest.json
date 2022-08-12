@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/make-React/static/css/main.44e262c5.css",
-    "main.js": "/make-React/static/js/main.eea2206c.js",
+    "main.css": "/make-React/static/css/main.6c55408e.css",
+    "main.js": "/make-React/static/js/main.17333682.js",
     "static/media/bgMenu.png": "/make-React/static/media/bgMenu.001fa1c7943f7e2e5f8d.png",
     "static/media/GraphikLCG-Bold.eot": "/make-React/static/media/GraphikLCG-Bold.512a41a502809fa05cfc.eot",
     "static/media/GraphikLCG-Semibold.eot": "/make-React/static/media/GraphikLCG-Semibold.fa9edae4500eebb39695.eot",
@@ -42,15 +42,14 @@
     "static/media/note.png": "/make-React/static/media/note.23903b0d10670a052ab5.png",
     "static/media/logo.svg": "/make-React/static/media/logo.e2e3a5a6c90f901cd9f2449d732570c7.svg",
     "index.html": "/make-React/index.html",
-    "static/media/check.svg": "/make-React/static/media/check.dde566974a1a129f9b28.svg",
+    "static/media/check.svg": "/make-React/static/media/check.a1ebb1906aaa10da4e5a.svg",
     "static/media/arrow-down.svg": "/make-React/static/media/arrow-down.7b962004fd7702516f6b.svg",
-    "static/media/arrow-up.svg": "/make-React/static/media/arrow-up.b21b6bbd5d2d41355189.svg",
-    "static/media/iconTel.svg": "/make-React/static/media/iconTel.bdca03e1f4d58a283fa2a17e8ddfa059.svg",
-    "main.44e262c5.css.map": "/make-React/static/css/main.44e262c5.css.map",
-    "main.eea2206c.js.map": "/make-React/static/js/main.eea2206c.js.map"
+    "static/media/iconTel.svg": "/make-React/static/media/iconTel.f5e89cf053b38aeb4122f1d7a46625f7.svg",
+    "main.6c55408e.css.map": "/make-React/static/css/main.6c55408e.css.map",
+    "main.17333682.js.map": "/make-React/static/js/main.17333682.js.map"
   },
   "entrypoints": [
-    "static/css/main.44e262c5.css",
-    "static/js/main.eea2206c.js"
+    "static/css/main.6c55408e.css",
+    "static/js/main.17333682.js"
   ]
 }

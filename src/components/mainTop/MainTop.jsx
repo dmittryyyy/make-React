@@ -4,7 +4,7 @@ import './mainTop.scss';
 
 export const MainTop = () => {
   return (
-    <div className="mainTop" id='parting-word'>
+    <div className="mainTop sectionContent" id='parting-word'>
       <div className="mainTop__title">
         <h1 className='mainTop__title-title'>Тестовое задание</h1>
         <h5 className='mainTop__title-subtitle'>Уровень: junior</h5>

@@ -3,7 +3,7 @@ import { React, useState } from 'react';
 
 import './sidebar.scss';
 
-export const Sidebar = () => {
+export const Sidebar = ({ listContent }) => {
 
     const [activeLink, setActiveLink] = useState(null);
     const [moveSideBar, setMoveSideBar] = useState();
@@ -19,30 +19,30 @@ export const Sidebar = () => {
         window.addEventListener('scroll', onActiveItemMenu);
     }, []);
 
-    const onActiveItemMenu = (e) => {
-        let scrollTop = document.documentElement.scrollTop;
-        if (scrollTop === 0) {
+    const onActiveItemMenu = () => {
+        let distanceScroll = window.scrollY;
+
+        if (distanceScroll === 0) {
             setMoveSideBar(false);
-        } else if (scrollTop > 0) {
+        } else {
             setMoveSideBar(true);
-            if (scrollTop <= 140) {
-                setActiveLink(itemsMenu[0].name);
-            } else if (scrollTop <= 2636) {
-                setActiveLink(itemsMenu[1].name);
-            } else if (scrollTop <= 3500) {
-                setActiveLink(itemsMenu[2].name);
-            } else {
-                setActiveLink(itemsMenu[3].name);
-            }
         }
-    }
+
+        const sectionsContent = listContent.current.children;
+
+        for (let i = 0; i < sectionsContent.length; i++) {
+            if ((sectionsContent[i].offsetTop - 100) <= distanceScroll) {
+                setActiveLink(`${'#' + sectionsContent[i].id}`);
+            }
+        };
+    };
 
     return (
         <div className={`sidebar ${moveSideBar ? 'sidebar_move' : ''}`}>
             <ul className="sidebar__list">
                 {itemsMenu.map((item) => (
-                    <li key={item.name} className="sidebar__list-item" onClick={(e) => onActiveItemMenu(e)}>
-                        <a className={`sidebar__list-link ${activeLink === item.name ? 'active__link' : ''}`} href={item.link}>{item.name}</a>
+                    <li key={item.name} className="sidebar__list-item" onClick={onActiveItemMenu}>
+                        <a className={`sidebar__list-link ${activeLink === item.link ? 'active__link' : ''}`} href={item.link}>{item.name}</a>
                     </li>
                 ))}
             </ul>

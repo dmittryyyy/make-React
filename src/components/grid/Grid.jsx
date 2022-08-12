@@ -10,7 +10,7 @@ import './grid.scss';
 export const Grid = () => {
 
     return (
-        <div className="grid" id='grid'>
+        <div className="grid sectionContent" id='grid'>
 
             <div className="grid__title">
                 <Subtitle

@@ -11,7 +11,7 @@ import './ui.scss';
 
 export const UI = () => {
     return (
-        <div className="ui" id='UI'>
+        <div className="ui sectionContent" id='UI'>
 
             <div className="ui__title">
                 <Subtitle title={'UI'} />

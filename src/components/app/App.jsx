@@ -1,4 +1,4 @@
-import { React, useState } from 'react';
+import { React, useState, useRef } from 'react';
 
 import { Menu } from '../menu/Menu';
 import { Header } from '../header/Header';
@@ -14,6 +14,8 @@ import './app.scss';
 function App() {
 
   const [isMenu, isSetMenu] = useState(false);
+
+  const listContent = useRef();
 
   const showHideMenu = () => {
     if (isMenu) {
@@ -37,10 +39,10 @@ function App() {
 
         <main>
           <div className="main__menu">
-            <Sidebar />
+            <Sidebar listContent={listContent}/>
           </div>
 
-          <div className="main__content">
+          <div className="main__content" ref={listContent}>
             <MainTop />
             <Grid />
             <Typography />

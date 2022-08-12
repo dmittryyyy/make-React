@@ -3,7 +3,7 @@ import { React, useState } from 'react';
 
 import './sidebar.scss';
 
-export const Sidebar = () => {
+export const Sidebar = ({ listContent }) => {
 
     const [activeLink, setActiveLink] = useState(null);
     const [moveSideBar, setMoveSideBar] = useState();
@@ -28,13 +28,13 @@ export const Sidebar = () => {
             setMoveSideBar(true);
         }
 
-        let sectionsContent = document.querySelectorAll('.sectionContent');
+        const sectionsContent = listContent.current.children;
 
-        sectionsContent.forEach((item) => {
-            if ((item.offsetTop - 100) <= distanceScroll) {
-                setActiveLink(`${'#' + item.id}`);
+        for (let i = 0; i < sectionsContent.length; i++) {
+            if ((sectionsContent[i].offsetTop - 100) <= distanceScroll) {
+                setActiveLink(`${'#' + sectionsContent[i].id}`);
             }
-        });
+        };
     };
 
     return (
